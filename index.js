@@ -39,13 +39,15 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(i, name , email) {
-    id: 5,
-    name: "Leia",
-   email: "leia@leia.com",
+function makePersonObject  (id, name , email) {
 
+    return {
+    "id": id,
+    "name": name,
+   "email": email,
+    }
 }
-return(makePersonObject());
+
 
 
 /**
@@ -61,8 +63,11 @@ return(makePersonObject());
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(object) {
+ 
+  
+   return `Hello, my name is $(object.name)`;
+  
 }
 
 /**
@@ -78,8 +83,18 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(name) {
+
+  return{
+    "name":name,
+    sum(a,b){
+      return {a+b}
+    },
+    speak(){
+      return (`Hello, my name is $(name)`)
+    }
+  }
+
 }
 
 
@@ -141,8 +156,19 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  const  findCar  = inventory[index];
+
+  return `This is a${findCar.car_make} ${findCar.car_model}`;
 }
+
+function getCarInfoByIndex(inventory, index) {
+   let car_make = inventory[index].car_make
+   let car_model = inventory[index].car_model
+
+    return 'This is a ${car_make) ${car_model}'
+}
+
+
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -155,8 +181,8 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(arr) {
+  return `This  is a  ${arr[arr.length-1]} ${arr[arr.length-1]}`
 }
 
 /**
