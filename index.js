@@ -47,6 +47,7 @@ function makePersonObject  (id, name , email) {
    "email": email,
     }
 }
+  makePersonObject(5, "Leia", "leia@leia.com")
 
 
 
